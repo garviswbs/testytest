@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Face++ JavaScript SDK</title>
+  </head>
+  <body>
+    <pre id="response">Loading...</pre>
+    <script type="text/javascript" src="facepp-sdk.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        var api = new FacePP('Ou4_TH70tfEhDeB4mnUjqarmLL-hLj8W', '	yx3_95cg6fuiQJumV1qkNoVO2IeyNQMF');
+        api.request('detection/detect', {
+          url: 'http://cn.faceplusplus.com/static/resources/python_demo/1.jpg'
+        }, function(err, result) {
+          if (err) {
+            // TODO handle error
+            return;
+          }
+          // TODO use result
+          document.getElementById('response').innerHTML = JSON.stringify(result, null, 2);
+        });
+      })();
+    </script>
+  </body>
+</html>
